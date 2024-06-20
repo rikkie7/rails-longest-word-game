@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Welcome to the longest word game!</h1>
+  <p>Here's your grid</p>
+  <div class="d-flex justify-content-evenly">
+    <%@letters.each do |letter| %>
+      <h5 class="border w-20 p-3 bg-primary text-white"><%= letter%></h5>
+    <%end%>
+  </div>
+  <p>What is your longest word?</p>
+  <form action="/score" method="post" data-turbo="false">
+    <input id="letters" name="letters" type="hidden" value="<%=@letters.join%>"/>
+    <input id="start_time" name="start_time" type="hidden" value="<%=@start_time%>"/>
+    <div class="d-flex">
+      <input class="w-100" id="word" name="word" tpye="text" placeholder="type your word here"/>
+      <input type="submit" value="play" class="btn btn-primary"/>
+    </div>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>

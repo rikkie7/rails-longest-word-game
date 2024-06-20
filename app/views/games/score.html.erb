@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Your Result:</h1>
+  <p><strong>Your Word: </strong><%=@word%></p>
+  <p><strong>Time taken to finish: </strong><%=@time%> seconds</p>
+  <p><strong>Your score: </strong><%=@score%></p>
+  <p><strong>Your total score: </strong><%=@total_score%></p>
+  <p><strong>Message: </strong><%=@message%></p>
+  <%= button_to "New Game", new_path, method: :get, class: "btn btn-primary"%>
+</div>
